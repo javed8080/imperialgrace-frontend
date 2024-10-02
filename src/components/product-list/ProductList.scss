@@ -1,0 +1,7 @@
+@import "../../custom.scss";
+
+
+.slick-prev, .slick-next {
+    color: map-get($theme-colors, 'black' ) !important;
+}
+  

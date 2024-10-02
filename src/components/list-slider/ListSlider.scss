@@ -1,0 +1,39 @@
+@import "../../custom.scss";
+
+.list-slider-container {
+  min-height: 40vh;
+}
+
+.slick-slide-custom {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slick-slide>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.slider-brand-images {
+  height: 30px;
+}
+
+.slider-btn {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+}

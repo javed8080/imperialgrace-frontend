@@ -1,0 +1,43 @@
+@import "../../custom.scss";
+
+
+.feature-one-container {
+    min-height: 40vh;
+}
+
+.feature-two-container {
+    border-radius: 50px !important;
+    overflow: hidden;
+}
+
+.feature-card {
+    // width: 24%;
+    width: 300px !important;
+    @media screen and (max-width: 767px) {
+        //do Smth
+        width: 100% !important;
+      }
+}
+
+.feature-list {
+    // height: 60vh;
+}
+
+.feature-custom-btn {
+    border-color: map-get($theme-colors, 'white' ) !important;
+    border-width: 1px;
+    border-radius: 5px;
+    color: map-get($theme-colors, 'white') !important;
+    background-color: transparent;
+    max-width: 300px;
+    width: 100%;
+    &:hover {
+        // border-bottom: 2px solid white;
+        text-decoration: underline;
+    }
+}
+
+.feature-list-main {
+    // min-height: 150vh;
+    margin-bottom: 2rem;
+}

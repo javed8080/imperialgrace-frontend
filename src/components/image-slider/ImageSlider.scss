@@ -1,0 +1,54 @@
+@import "../../custom.scss";
+
+
+.slider-container {
+  width: 100%;
+  max-width: 600px !important;
+}
+
+/* Custom styles for next arrow */
+.custom-next-arrow {
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    color: map-get($theme-colors, 'black' ) !important;
+    border-radius: 50%;
+    right: 30px;
+  }
+  
+  /* Custom styles for previous arrow */
+  .custom-prev-arrow {
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    color: map-get($theme-colors, 'black' ) !important;
+    border-radius: 50%;
+    left: 15px; /* Adjust the position */
+  }
+
+  /* Add this to your CSS file, e.g., Slider.css */
+
+/* Targeting the thumbnail images */
+.custom-thumb-slider img {
+    opacity: 0.7; /* Initial opacity */
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Hover effect to increase opacity */
+  .custom-thumb-slider img:hover {
+    opacity: 1; /* Full opacity on hover */
+  }
+
+.custom-thumb-slider {
+    padding: 0 10px;
+}
+
+.custom-thumb-slider .slick-slide div div {
+    width: auto !important;
+}
+
+.slider-images {
+  height: 500px !important;
+  object-fit: cover;
+}
+  

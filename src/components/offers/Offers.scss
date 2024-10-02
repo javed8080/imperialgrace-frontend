@@ -1,0 +1,49 @@
+@import "../../custom.scss";
+
+.offers-section {
+    overflow-x: hidden;
+}
+
+.offer-image {
+    mix-blend-mode: multiply;
+}
+
+.watch-two-container {
+    background: url('https://img.freepik.com/premium-vector/vector-seamless-pattern-watch-editable-can-be-used-web-page-backgrounds-pattern-fills_159242-1788.jpg?w=740') center no-repeat;
+}
+
+.watch-three-container {
+    background: url('https://img.freepik.com/free-vector/pattern-seamless_1284-45977.jpg?t=st=1723723926~exp=1723727526~hmac=82c8c343f5097f956155bc3279a2892e5534e3c26a57476a4a13749a5a123b04&w=740') center no-repeat;
+    width: 30% !important;
+    
+    @media screen and (max-width: 992px) {
+        height: 400px;
+        width: 47% !important;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 100% !important;
+    }
+}
+
+.watch-container {
+    background-size: cover;
+    position: relative;
+    isolation: isolate;
+}
+
+.watch-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: map-get($theme-colors, 'skin' );
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.watch-three {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+}

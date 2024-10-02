@@ -1,0 +1,8 @@
+@import "../../custom.scss";
+
+.review-section {
+    width: 400px;
+    @media (max-width: 768px) {
+        width: 100% !important;
+    }  
+}

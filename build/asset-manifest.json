@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c9f35375.css",
+    "main.js": "/static/js/main.7e9bc9dc.js",
+    "static/js/488.dee7dc33.chunk.js": "/static/js/488.dee7dc33.chunk.js",
+    "static/media/watch-2.png": "/static/media/watch-2.df12c28184f559c1f39c.png",
+    "static/media/watch-8.png": "/static/media/watch-8.0355310444158f0ab51a.png",
+    "static/media/watch-9.png": "/static/media/watch-9.290266bae0cb59f60735.png",
+    "static/media/bg-logon.png": "/static/media/bg-logon.c9d1ce2f991fbd47d4c6.png",
+    "static/media/hone-banner.jpg": "/static/media/hone-banner.32ed68f3a201425209b9.jpg",
+    "static/media/poppins-light.ttf": "/static/media/poppins-light.9daa4ad48f08d8208f4b.ttf",
+    "static/media/poppins-regular.ttf": "/static/media/poppins-regular.9171031e050ecf676c11.ttf",
+    "static/media/poppins-bold.ttf": "/static/media/poppins-bold.9f0cd50bfdf6533c6cd2.ttf",
+    "static/media/not-found.png": "/static/media/not-found.2c24aab480a06fef880a.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.c9f35375.css.map": "/static/css/main.c9f35375.css.map",
+    "main.7e9bc9dc.js.map": "/static/js/main.7e9bc9dc.js.map",
+    "488.dee7dc33.chunk.js.map": "/static/js/488.dee7dc33.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9f35375.css",
+    "static/js/main.7e9bc9dc.js"
+  ]
+}

@@ -1,0 +1,23 @@
+@import "../custom.scss";
+
+.product-protection-container {
+    width: 47% !important;  
+    @media (max-width: 768px) {
+        width: 100% !important;
+    }  
+}
+
+.product-image-slider {
+    // width: 100%;
+    // max-width: 600px !important;
+}
+
+.custom-table th {
+    background-color: map-get($theme-colors, 'lightgray' ) !important;
+    color: map-get($theme-colors, 'black');
+}
+
+.custom-table td {
+    background-color: map-get($theme-colors, 'white' );
+    color: map-get($theme-colors, 'black');
+}

@@ -1,0 +1,36 @@
+@import "../custom.scss";
+
+.signup-form-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.signup-input {
+    border-color: map-get($theme-colors, 'black' ) !important;
+}
+
+.signup-input-label {
+    position: absolute;
+    left: 10px;
+    bottom: 25px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+.show-hide-btn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+  }
+
+.show-hide-btn:active,
+.show-hide-btn:focus {
+    outline: none;
+    border: none;
+}
+
+.signup-checkbox:checked {
+    background-color: map-get($theme-colors, 'primary' );
+    border: none;
+}

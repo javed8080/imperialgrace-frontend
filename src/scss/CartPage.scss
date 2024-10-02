@@ -1,0 +1,19 @@
+@import "../custom.scss";
+
+.cart-page-image {
+    height: auto;
+    // @media (max-width: )
+}
+
+.table-borderless td, 
+.table-borderless th {
+  border: none;
+}
+
+.table-borderless thead th {
+    background-color: map-get($theme-colors, 'skin');
+}
+
+.quantity-buttons-container {
+    width: 130px !important;
+}

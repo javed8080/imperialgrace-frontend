@@ -1,0 +1,27 @@
+@import "../../custom.scss";
+
+.hero-section {
+    background: url('../../assets/images/hone-banner.jpg') center no-repeat !important;
+    background-size: cover !important;
+    min-height: 70vh;
+}
+
+.hero-heading {
+    // line-height: 80px !important;
+}
+
+// .hero-container {
+//     width: 60% !important;
+// }
+
+.hero-btn {
+    font-size: 20px !important;
+    &:hover {
+        // border-bottom: 1px solid black !important;
+        text-decoration: underline;
+    }
+}
+
+.hero-btn:hover {
+    // background-color: red !important;
+}

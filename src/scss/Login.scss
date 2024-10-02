@@ -1,0 +1,38 @@
+@import "../custom.scss";
+
+.login-banner {
+  max-height: 400px !important;
+  object-fit: cover;
+}
+
+.login-form-container {
+  max-width: 800px;
+  width: 100%;
+  
+}
+
+.login-input {
+  border-color: map-get($theme-colors, 'black' ) !important;
+}
+
+.login-input-label {
+  position: absolute;
+  left: 10px;
+  bottom: 25px;
+  padding: 0 10px;
+  background-color: white;
+  // background-color: transparent !important;
+}
+
+.show-hide-btn {
+  position: absolute;
+  top: 5px !important;
+  right: 10px;
+  background-color: #ffffff !important;
+  padding: 0 10px !important;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+}

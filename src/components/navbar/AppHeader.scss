@@ -1,0 +1,42 @@
+@import "../../custom.scss";
+
+.nav {
+    // position: sticky;
+    // top: -2px !important;
+    background-color: map-get($theme-colors, 'primary' ) !important;
+    color: map-get($theme-colors, 'white' ) !important;
+}
+
+.sticky-top {
+    z-index: 100 !important;
+}
+
+
+.logo {
+    height: 50px !important;
+}
+
+.logo-top {
+    height: 50px !important;
+    width: 200px !important;
+    object-fit: cover;
+    display: block;
+}
+
+.nav-search-icon {
+  cursor: pointer;
+}
+
+
+.active {
+    font-weight: 600 !important;
+    border-bottom: 3px solid !important;
+    // border-bottom-color: map-get($theme-colors, 'white' );
+}
+
+.nav-link {
+    padding: 0;
+    &:hover {
+        border-bottom: 2px solid black;
+    }
+}

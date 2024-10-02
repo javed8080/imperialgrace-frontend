@@ -1,0 +1,15 @@
+$theme-colors: (
+
+     "primary": #03181c,
+     "secondary": #2C2C38,
+     "white": #F5F5F5,
+     "black": #000,
+     "danger":#bb2d3b,
+     "seagreen": #03181c,
+     "skin": #f6f2ee,
+     "lightgray": #f5f5f5,
+);
+
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "video-react/styles/scss/video-react";
