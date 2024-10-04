@@ -1,19 +1,57 @@
-import React, { useState } from 'react'
-import { Button, Container, Form, Image } from 'react-bootstrap'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import LoginImage from "../assets/images/bg-logon.png"
-import CustomButton from '../components/customButton/CustomButton'
-import Footer from '../components/footer/Footer'
-import AppHeader from '../components/navbar/AppHeader'
-import "../scss/Signup.scss"
+import React from "react";
+import { Button, Container, Form, Image } from 'react-bootstrap';
+import { FormProvider, useForm } from 'react-hook-form';
+import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import LoginImage from "../assets/images/bg-logon.png";
+import Footer from "../components/footer/Footer";
+import CustomInputField from "../components/global/CustomInputField/CustomInputField";
+import CustomPasswordField from "../components/global/CustomInputField/CustomPasswordField";
+import AppHeader from "../components/navbar/AppHeader";
+import '../scss/Login.scss';
+import { isLoaderAtom, snakeBarAtom } from "../util/RecoilStore";
+
+import "../scss/Signup.scss";
+import { apiPost } from "../util/ApiRequest";
+import { ENDPOINTS } from "../util/EndPoint";
 
 const SignUp = () => {
+    const methods = useForm();
+    const setIsLoader = useSetRecoilState(isLoaderAtom);
+    const setSnackBarState = useSetRecoilState(snakeBarAtom);
 
-    const [passwordVisible, setPasswordVisible] = useState(false);
 
-    const togglePasswordVisibility = () => {
-        setPasswordVisible(!passwordVisible);
+    const onSubmit = (data) => {
+        setIsLoader(true)
+        console.log(data);
+
+        apiPost({
+            url: ENDPOINTS.UserSignUp,
+            data,
+            onSuccess: (res) => {
+                localStorage.setItem("accessToken", res?.data?.token);
+                localStorage.setItem("user", JSON.stringify(res?.data?.user_details));
+
+                // navigate(`/dsadsa`);
+                setIsLoader(false)
+                setSnackBarState({
+                    snackStatus: true,
+                    snackColor: "bg-success",
+                    snackMsg: "Successful",
+                });
+
+            },
+            onFailure: (error) => {
+                setIsLoader(false)
+                setSnackBarState({
+                    snackStatus: true,
+                    snackColor: "bg-danger",
+                    snackMsg: "There is an Error Plz Try Again",
+                });
+
+            },
+            auth: false,
+        });
     };
 
     return (
@@ -25,54 +63,90 @@ const SignUp = () => {
                 fluid
             />
             <Container fluid className="d-flex flex-column justify-content-center align-items-center py-4">
-                <Form className="d-flex flex-column gap-5 signup-form-container p-5">
-                    <h1>Create Account</h1>
+                <div className="d-flex flex-column gap-5 signup-form-container p-5">
+                    <h1>Sign up</h1>
+                    <FormProvider {...methods}>
+                        <Form onSubmit={methods.handleSubmit(onSubmit)} className="login-form-container">
+                            <div className="mb-4">
+                                <CustomInputField
+                                    label="Email address"
+                                    placeholder="Email address"
+                                    name="email"
+                                    type="email"
+                                    required={true}
+                                    validation={{
+                                        pattern: {
+                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                            message: 'Invalid email address',
+                                        },
+                                    }}
+                                />
+                            </div>
 
-                    <Form.Group controlId="InputFirstName" className="position-relative mb-3">
-                        <Form.Label className="signup-input-label">First Name</Form.Label>
-                        <Form.Control type="text" className="signup-input" />
-                    </Form.Group>
 
-                    <Form.Group controlId="InputLastName" className="position-relative mb-3">
-                        <Form.Label className="signup-input-label">Last Name</Form.Label>
-                        <Form.Control type="text" className="signup-input" />
-                    </Form.Group>
+                            <div className="mb-4">
+                                <CustomInputField
+                                    label="first name"
+                                    placeholder="first name"
+                                    name="firstName"
+                                    type="text"
+                                    required={true}
+                                />
+                            </div>
 
-                    <Form.Group controlId="InputEmail1" className="position-relative mb-3">
-                        <Form.Label className="signup-input-label">Email address</Form.Label>
-                        <Form.Control type="email" className="signup-input" aria-describedby="emailHelp" />
-                    </Form.Group>
+                            <div className="mb-4">
+                                <CustomInputField
+                                    label="last name"
+                                    placeholder="last name"
+                                    name="lastName"
+                                    type="text"
+                                    required={true}
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <CustomInputField
+                                    label="user name"
+                                    placeholder="user name"
+                                    name="userName"
+                                    type="text"
+                                    required={true}
+                                />
+                            </div>
 
-                    <Form.Group controlId="InputPassword" className="position-relative mb-3">
-                        <Form.Label className="signup-input-label">Password</Form.Label>
-                        <Form.Control
-                            type={passwordVisible ? 'text' : 'password'}
-                            className="signup-input"
-                        />
-                        <Button
-                            className="btn-white show-hide-btn"
-                            type="button"
-                            onClick={togglePasswordVisibility}
-                        >
-                            {passwordVisible ? <FaEyeSlash /> : <FaEye />}
-                        </Button>
-                    </Form.Group>
+                            <div className="mb-4">
+                                <CustomInputField
+                                    label="Phone number"
+                                    placeholder="Phone number"
+                                    name="phoneNumber"
+                                    type="tel"
+                                    required={true}
+                                />
+                            </div>
 
-                    <Form.Group controlId="InputPhoneNumber" className="position-relative mb-3">
-                        <Form.Label className="signup-input-label">Phone Number</Form.Label>
-                        <Form.Control type="tel" className="signup-input" />
-                    </Form.Group>
+                            <div className="mb-4" >
+                                <CustomPasswordField
+                                    label="Password"
+                                    placeholder="Enter password"
+                                    name="password"
+                                    required={true}
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <CustomPasswordField
+                                    label="confirm password"
+                                    placeholder="confirm password"
+                                    name="confirmPassword"
+                                    required={true}
+                                />
+                            </div>
 
-                    <Form.Group controlId="flexCheckDefault" className="form-check mb-3">
-                        <Form.Check
-                            type="checkbox"
-                            className="signup-checkbox"
-                            label="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quaerat ad dolorem expedita error aliquid."
-                        />
-                    </Form.Group>
 
-                    <CustomButton className="btn btn-primary text-white py-3 fs-4 fw-bold" children="Sign up" />
-                </Form>
+
+
+                            <Button type="submit" className="btn btn-primary text-white py-3 fs-4 fw-bold">Sign up</Button>
+                        </Form>
+                    </FormProvider>
+                </div>
 
                 <Link to="/login" className="text-primary">
                     Login to your Account

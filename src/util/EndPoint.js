@@ -6,6 +6,8 @@ export const ENDPOINTS = {
 
   // User Login
   UserLogin: `${BASE_URL}api/auth/login`,
+  UserSignUp: `${BASE_URL}api/users/sign-up`,
+
 
   // Dashboard Chart
   DashboardUserChart: `${BASE_URL}api/admin/chart-current-year-users`,
