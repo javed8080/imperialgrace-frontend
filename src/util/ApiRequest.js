@@ -9,9 +9,22 @@ function getCommonHeaders(h) {
   const token = localStorage.getItem("accessToken");
   if (token) headers.Authorization = `Bearer ${token}`;
   if (h) headers = { ...h, ...headers };
-  return headers;
+
 }
 
+export const getHeaders = async ({auth,isFormData}) => {
+  let headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": isFormData?"multipart/form-data":"application/json",
+  };
+  if(auth){
+    headers = {
+     ...headers,
+      "Authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+    }
+  }
+  return headers;
+}
 export const apiGet = async (url, onSuccess, onFailure) => {
   await axios
     .get(url, {
@@ -31,7 +44,7 @@ export const apiGet = async (url, onSuccess, onFailure) => {
 export const apiGetAuth = async (url, onSuccess, onFailure, headers) => {
   await axios
     .get(url, {
-      headers: getCommonHeaders(headers),
+      headers: Headers(headers),
     })
     .then((response) => {
       if (onSuccess) onSuccess(response?.data?.data);
@@ -41,10 +54,13 @@ export const apiGetAuth = async (url, onSuccess, onFailure, headers) => {
     });
 };
 
-export const apiPost = async (url, body, onSuccess, onFailure) => {
+export const apiPost = async ({url, body, onSuccess, onFailure,auth=true,isFormData=true}) => {
   await axios
     .post(url, body, {
-      headers: getCommonHeaders(),
+      headers: getHeaders({
+        auth: auth,
+        isFormData: isFormData,
+      }),
     })
     .then((response) => {
       if (onSuccess) onSuccess(response?.data);

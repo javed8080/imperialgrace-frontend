@@ -1,27 +1,32 @@
 import { atom } from 'recoil';
+import { recoilPersist } from 'recoil-persist';
+const { persistAtom } = recoilPersist()
 
-
-export const booleanState = atom({
-    key: 'booleanState',
-    default: false,
-});
-
-export const isLoaderState = atom({
-    key: 'isLoaderState',
+export const isLoaderAtom = atom({
+    key: 'isLoaderAtom',
     default: false
 });
 
-export const burgerShowState = atom({
-    key: 'burgerShowState',
-    default: true
-});
-
-export const snakeBarState = atom({
-    key: 'snakeBarState',
+export const snakeBarAtom = atom({
+    key: 'snakeBarAtom',
     default: {
         snackStatus: false,
         snackColor: "bg-primary",
         snackMsg: ""
     },
 });
+export const userAtom = atom({
+    key: 'userAtom',
+    default: {},
+    effects_UNSTABLE: [persistAtom],
+
+});
+
+export const tokenAtom = atom({
+    key: 'tokenAtom',
+    default: '',
+    effects_UNSTABLE: [persistAtom],
+
+});
+
 

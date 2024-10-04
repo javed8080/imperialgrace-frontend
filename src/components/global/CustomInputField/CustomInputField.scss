@@ -1,0 +1,14 @@
+@import "../../../custom.scss";
+
+.custom-input input{
+    height: 54px;
+}
+
+.custom-input label{
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    background-color: #fff;
+    padding: 0px 5px;
+    font-size: 12px;
+}

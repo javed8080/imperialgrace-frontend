@@ -9,7 +9,7 @@ dist/
 build/
 # Compiled Java class files
 *.class
-
+.env
 # Compiled Python bytecode
 *.py[cod]
 
