@@ -19,7 +19,7 @@ const CustomPasswordField = ({ label, name, validation, required }) => {
 
                 type={passwordVisible ? "text" : "password"} className="login-input" />
             <Button
-                className="btn-white show-hide-btn position-absolute"
+                className="btn btn-primary text-black show-hide-btn position-absolute"
                 type="button"
                 onClick={() => setPasswordVisible(!passwordVisible)}
             >

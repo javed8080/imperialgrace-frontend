@@ -86,7 +86,7 @@ const SignUp = () => {
 
                             <div className="mb-4">
                                 <CustomInputField
-                                    label="first name"
+                                    label="First name"
                                     placeholder="first name"
                                     name="firstName"
                                     type="text"
@@ -96,7 +96,7 @@ const SignUp = () => {
 
                             <div className="mb-4">
                                 <CustomInputField
-                                    label="last name"
+                                    label="Last name"
                                     placeholder="last name"
                                     name="lastName"
                                     type="text"
@@ -105,7 +105,7 @@ const SignUp = () => {
                             </div>
                             <div className="mb-4">
                                 <CustomInputField
-                                    label="user name"
+                                    label="User name"
                                     placeholder="user name"
                                     name="userName"
                                     type="text"
@@ -133,15 +133,12 @@ const SignUp = () => {
                             </div>
                             <div className="mb-4">
                                 <CustomPasswordField
-                                    label="confirm password"
+                                    label="Confirm password"
                                     placeholder="confirm password"
                                     name="confirmPassword"
                                     required={true}
                                 />
                             </div>
-
-
-
 
                             <Button type="submit" className="btn btn-primary text-white py-3 fs-4 fw-bold">Sign up</Button>
                         </Form>
